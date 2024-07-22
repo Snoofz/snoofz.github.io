@@ -327,10 +327,13 @@ class UIManager {
         const label = document.createElement('h3');
         label.textContent = labelText;
         label.id = labelText + Math.floor(Math.random() * 120) + 1;
-        label.style.color = color; // White text color
+        label.style.color = color;
         label.style.marginBottom = '20px';
         label.style.fontSize = '18px';
         label.style.textAlign = 'center';
+        if (color == "flicker-animation") {
+            label.classList.add('flicker-animation');
+        }
 
         this.UIContext.appendChild(label);
 
@@ -555,8 +558,11 @@ class UITab {
         label.style.marginBottom = '20px';
         label.style.fontSize = '18px';
         label.style.textAlign = 'center';
-
+        if (color == "flicker-animation") {
+            label.classList.add('flicker-animation');
+        }
         this.contentContainer.appendChild(label);
+        
 
         return label;
     }
@@ -848,13 +854,13 @@ document.onclick = () => {
 
     tabs = tabs.UITabs;
 
-    tabs[0].uiTab.addLabel("I'm Snoofz. 18 year old goober! I'm indeed a furry, gay and yeah.", "#5D3FD3");
-    tabs[0].uiTab.addLabel("I'm a programmer, mechanic, artist and music producer!", "#5D3FD3");
-    tabs[0].uiTab.addLabel("Living in Santa Maria ️‍📍", "#5D3FD3");
-    tabs[0].uiTab.addLabel("Discord is snoofzthefox", "#5D3FD3");
-    tabs[0].uiTab.addLabel("I am from Bakersfield, lived a shitty 18 years of my life.", "#5D3FD3");
-    tabs[0].uiTab.addLabel("I work on Motors from 2 stroke to 4 stroke, v6 engines, v8 engines, vTwin engines and im good with carb work!", "#5D3FD3");
-    tabs[0].uiTab.addLabel("Well, thats all I'm going to put on here as of now! Thanks for visiting this site!", "#5D3FD3");
+    tabs[0].uiTab.addLabel("I'm Snoofz. 18 year old goober! I'm indeed a furry, gay and yeah.", "flicker-animation");
+    tabs[0].uiTab.addLabel("I'm a programmer, mechanic, artist and music producer!", "flicker-animation");
+    tabs[0].uiTab.addLabel("Living in Santa Maria ️‍📍", "flicker-animation");
+    tabs[0].uiTab.addLabel("Discord is snoofzthefox", "flicker-animation");
+    tabs[0].uiTab.addLabel("I am from Bakersfield, lived a shitty 18 years of my life.", "flicker-animation");
+    tabs[0].uiTab.addLabel("I work on Motors from 2 stroke to 4 stroke, v6 engines, v8 engines, vTwin engines and im good with carb work!", "flicker-animation");
+    tabs[0].uiTab.addLabel("Well, thats all I'm going to put on here as of now! Thanks for visiting this site!", "flicker-animation");
 
     tabs[1].uiTab.addButton("Snowly Chat", () => {
         newTab("https://snowlychat.replit.app");
@@ -904,9 +910,9 @@ document.onclick = () => {
         newTab("https://x.com/paxthefoxxo");
     });
 
-    tabs[3].uiTab.addLabel("Discord: snoofzthefox", "#5D3FD3");
-    tabs[3].uiTab.addLabel("Email: uwufoonix5@outlook.com", "#5D3FD3");
-    tabs[3].uiTab.addLabel("Telegram: @foofoothefox", "#5D3FD3");
+    tabs[3].uiTab.addLabel("Discord: snoofzthefox", "flicker-animation");
+    tabs[3].uiTab.addLabel("Email: uwufoonix5@outlook.com", "flicker-animation");
+    tabs[3].uiTab.addLabel("Telegram: @foofoothefox", "flicker-animation");
 
     tabs[4].uiTab.addLabel("Liam - Husband", "#5D3FD3");
     tabs[4].uiTab.addLabel("Hri7566 - Kewl Programmer dude", "#8d3f50");
@@ -920,7 +926,7 @@ document.onclick = () => {
     tabs[4].uiTab.addLabel("Khorne - Another Pawsome Furball", "#b50507");
 
     tabs[5].uiTab.addSpacer(15);
-    tabs[5].uiTab.addLabel("BG Music Controls", "#5D3FD3");
+    tabs[5].uiTab.addLabel("BG Music Controls", "flicker-animation");
     music.loop = true;
     tabs[5].uiTab.addButton("Pause", () => {
         if (music.isPlaying) {
