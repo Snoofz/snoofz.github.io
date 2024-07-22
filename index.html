@@ -393,7 +393,7 @@ class UIManager {
         logo.src = src;
         logo.className = 'logo';
         logo.alt = 'Logo';
-        logo.style.marginLeft = '45%';
+        logo.style.marginLeft = '39%';
 
         this.UIContext.insertBefore(logo, this.UIContext.firstChild);
 
@@ -798,9 +798,9 @@ document.onclick = () => {
     music.play();
 
     uiManager.createNotification('Snoofz', 'Welcome to my about me!', 7000);
-    let mainMenu = uiManager.createMenu("epicUI", "Snoofz's Website", "950px", "800px");
+    let mainMenu = uiManager.createMenu("epicUI", "", "950px", "800px");
     uiManager.makeDraggable(mainMenu);
-    uiManager.addLogo("https://github.com/Snoofz/snoofz.github.io/blob/main/text.png?raw=true");
+    uiManager.addLogo("https://github.com/Snoofz/snoofz.github.io/blob/main/Logo.png?raw=true");
     uiManager.addLabel(`This is my pawsome about me website, feel free to look around!`);
 
     let tabs = uiManager.createTabMenu([
