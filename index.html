@@ -800,7 +800,7 @@ document.onclick = () => {
     let mainMenu = uiManager.createMenu("epicUI", "", "950px", "800px");
     uiManager.makeDraggable(mainMenu);
     uiManager.addLogo("https://github.com/Snoofz/snoofz.github.io/blob/main/Logo.png?raw=true");
-    uiManager.addLabel(`This is my pawsome about me website, feel free to look around!`);
+    uiManager.addLabel(`This is my pawsome about me website, feel free to look around!`, "#5D3FD3");
 
     let tabs = uiManager.createTabMenu([
         {
@@ -831,13 +831,13 @@ document.onclick = () => {
 
     tabs = tabs.UITabs;
 
-    tabs[0].uiTab.addLabel("I'm Snoofz. 18 year old goober! I'm indeed a furry, gay and yeah.");
-    tabs[0].uiTab.addLabel("I'm a programmer, mechanic, artist and music producer!");
-    tabs[0].uiTab.addLabel("Living in Santa Maria ️‍📍");
-    tabs[0].uiTab.addLabel("Discord is snoofzthefox");
-    tabs[0].uiTab.addLabel("I am from Bakersfield, lived a shitty 18 years of my life.");
-    tabs[0].uiTab.addLabel("I work on Motors from 2 stroke to 4 stroke, v6 engines, v8 engines, vTwin engines and im good with carb work!");
-    tabs[0].uiTab.addLabel("Well, thats all I'm going to put on here as of now! Thanks for visiting this site!");
+    tabs[0].uiTab.addLabel("I'm Snoofz. 18 year old goober! I'm indeed a furry, gay and yeah.", "#5D3FD3");
+    tabs[0].uiTab.addLabel("I'm a programmer, mechanic, artist and music producer!", "#5D3FD3");
+    tabs[0].uiTab.addLabel("Living in Santa Maria ️‍📍", "#5D3FD3");
+    tabs[0].uiTab.addLabel("Discord is snoofzthefox", "#5D3FD3");
+    tabs[0].uiTab.addLabel("I am from Bakersfield, lived a shitty 18 years of my life.", "#5D3FD3");
+    tabs[0].uiTab.addLabel("I work on Motors from 2 stroke to 4 stroke, v6 engines, v8 engines, vTwin engines and im good with carb work!", "#5D3FD3");
+    tabs[0].uiTab.addLabel("Well, thats all I'm going to put on here as of now! Thanks for visiting this site!", "#5D3FD3");
 
     tabs[1].uiTab.addButton("Snowly Chat", () => {
         newTab("https://snowlychat.replit.app");
@@ -887,9 +887,9 @@ document.onclick = () => {
         newTab("https://x.com/paxthefoxxo");
     });
 
-    tabs[3].uiTab.addLabel("Discord: snoofzthefox");
-    tabs[3].uiTab.addLabel("Email: uwufoonix5@outlook.com");
-    tabs[3].uiTab.addLabel("Telegram: @foofoothefox");
+    tabs[3].uiTab.addLabel("Discord: snoofzthefox", "#5D3FD3");
+    tabs[3].uiTab.addLabel("Email: uwufoonix5@outlook.com", "#5D3FD3");
+    tabs[3].uiTab.addLabel("Telegram: @foofoothefox", "#5D3FD3");
 
     tabs[4].uiTab.addLabel("Liam - Husband", "#5D3FD3");
     tabs[4].uiTab.addLabel("Hri7566 - Kewl Programmer dude", "#8d3f50");
@@ -903,7 +903,7 @@ document.onclick = () => {
     tabs[4].uiTab.addLabel("Khorne - Another Pawsome Furball", "#b50507");
 
     tabs[5].uiTab.addSpacer(15);
-    tabs[5].uiTab.addLabel("BG Music Controls");
+    tabs[5].uiTab.addLabel("BG Music Controls", "#5D3FD3");
     tabs[5].uiTab.addButton("Pause", () => {
         if (music.isPlaying) {
             music.pause();
