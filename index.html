@@ -740,20 +740,11 @@ animation: rainbow 4s linear infinite;
 
      @keyframes flicker {
             0% { color: red; }
-            10% { color: black; }
-            20% { color: red; }
-            30% { color: white; }
-            40% { color: red; }
-            50% { color: black; }
-            60% { color: red; }
-            70% { color: white; }
-            80% { color: red; }
-            90% { color: black; }
-            100% { color: red; }
+            100% { color: black; }
         }
 
         .flicker-animation {
-            animation: flicker 0.5s infinite; /* Adjust timing and animation as needed */
+            animation: flicker 3s infinite; /* Adjust timing and animation as needed */
         }
 `;
     document.head.appendChild(style);
