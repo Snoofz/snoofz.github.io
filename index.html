@@ -326,6 +326,7 @@ class UIManager {
     addLabel(labelText, color) {
         const label = document.createElement('h3');
         label.textContent = labelText;
+        label.id = labelText + Math.floor(Math.random() * 120) + 1;
         label.style.color = color; // White text color
         label.style.marginBottom = '20px';
         label.style.fontSize = '18px';
@@ -549,6 +550,7 @@ class UITab {
     addLabel(labelText, color) {
         const label = document.createElement('h3');
         label.innerHTML = labelText;
+        label.id = labelText + Math.floor(Math.random() * 120) + 1;
         label.style.color = color; // White text color
         label.style.marginBottom = '20px';
         label.style.fontSize = '18px';
@@ -674,47 +676,48 @@ function appendCustomScrollbarStyles() {
     style.type = 'text/css';
     style.innerHTML = `
     @keyframes rotate {
-from {
-transform: rotate(0deg);
-}
-to {
-transform: rotate(360deg);
-}
-}
-.logo {
-animation: rotate 10s linear infinite
-width: 100px;
-height: 100px;
-}
-@keyframes hue-shift {
-0% { filter: hue-rotate(0deg); }
-100% { filter: hue-rotate(360deg); }
-}
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
 
-.hue-shift-animation {
-animation: hue-shift 10s linear infinite; /* Adjust timing and animation as needed */
-}
-        /* Custom rainbow  */
-@keyframes rainbow {
-0% { color: #ff0000; scrollbar-color: #ff0000 #0e0e0e; border-bottom-color: #ff0000; }
-14% { color: #ff7700; scrollbar-color: #ff7700 #0e0e0e; border-bottom-color: #ff7700; }
-28% { color: #ffff00; scrollbar-color: #ffff00 #0e0e0e; border-bottom-color: #ffff00; }
-42% { color: #00ff00; scrollbar-color: #00ff00 #0e0e0e; border-bottom-color: #00ff00; }
-57% { color: #0000ff; scrollbar-color: #0000ff #0e0e0e; border-bottom-color: #0000ff; }
-71% { color: #8a2be2; scrollbar-color: #8a2be2 #0e0e0e; border-bottom-color: #8a2be2; }
-85% { color: #ff00ff; scrollbar-color: #ff00ff #0e0e0e; border-bottom-color: #ff00ff; }
-100% { color: #ff0000; scrollbar-color: #ff0000 #0e0e0e; border-bottom-color: #ff0000; }
-}
+    .logo {
+        animation: rotate 10s linear infinite;
+        width: 100px;
+        height: 100px;
+    }
 
-.rainbow-animation {
-animation: rainbow 4s linear infinite;
-}
+    @keyframes hue-shift {
+        0% { filter: hue-rotate(0deg); }
+        100% { filter: hue-rotate(360deg); }
+    }
+
+    .hue-shift-animation {
+        animation: hue-shift 10s linear infinite; /* Adjust timing and animation as needed */
+    }
+
+    @keyframes rainbow {
+        0% { color: #ff0000; scrollbar-color: #ff0000 #0e0e0e; border-bottom-color: #ff0000; }
+        14% { color: #ff7700; scrollbar-color: #ff7700 #0e0e0e; border-bottom-color: #ff7700; }
+        28% { color: #ffff00; scrollbar-color: #ffff00 #0e0e0e; border-bottom-color: #ffff00; }
+        42% { color: #00ff00; scrollbar-color: #00ff00 #0e0e0e; border-bottom-color: #00ff00; }
+        57% { color: #0000ff; scrollbar-color: #0000ff #0e0e0e; border-bottom-color: #0000ff; }
+        71% { color: #8a2be2; scrollbar-color: #8a2be2 #0e0e0e; border-bottom-color: #8a2be2; }
+        85% { color: #ff00ff; scrollbar-color: #ff00ff #0e0e0e; border-bottom-color: #ff00ff; }
+        100% { color: #ff0000; scrollbar-color: #ff0000 #0e0e0e; border-bottom-color: #ff0000; }
+    }
+
+    .rainbow-animation {
+        animation: rainbow 4s linear infinite;
+    }
 
     /* Custom scrollbar styles */
     .custom-scrollbar {
         overflow-y: auto;
         scrollbar-width: thin;
-        animation: rainbow 4s linear infinite;
     }
 
     /* For Webkit browsers */
@@ -727,7 +730,7 @@ animation: rainbow 4s linear infinite;
     }
 
     .custom-scrollbar::-webkit-scrollbar-thumb {
-       animation: rainbow 4s linear infinite;
+        animation: rainbow 4s linear infinite;
         border-radius: 20px;
         border: 3px solid #330000;
     }
@@ -735,15 +738,15 @@ animation: rainbow 4s linear infinite;
     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
         animation: rainbow 4s linear infinite;
     }
-`;
+    `;
     document.head.appendChild(style);
 }
+      
+appendCustomScrollbarStyles();
 
 function newTab(url) {
     window.open(url, '_blank');
 }
-
-appendCustomScrollbarStyles();
 
 let music = {
     audio: new Audio("https://github.com/Snoofz/Snoofz/raw/main/Musica.ogg"),
