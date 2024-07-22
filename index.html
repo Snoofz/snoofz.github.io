@@ -675,21 +675,6 @@ function appendCustomScrollbarStyles() {
     const style = document.createElement('style');
     style.type = 'text/css';
     style.innerHTML = `
-    @keyframes rotate {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    .logo {
-        animation: rotate 10s linear infinite;
-        width: 100px;
-        height: 100px;
-    }
-
     @keyframes hue-shift {
         0% { filter: hue-rotate(0deg); }
         100% { filter: hue-rotate(360deg); }
