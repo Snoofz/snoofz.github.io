@@ -323,14 +323,13 @@ class UIManager {
         return button;
     }
 
-    addLabel(labelText) {
+    addLabel(labelText, color) {
         const label = document.createElement('h3');
         label.textContent = labelText;
-        label.style.color = '#ffffff'; // White text color
+        label.style.color = color; // White text color
         label.style.marginBottom = '20px';
         label.style.fontSize = '18px';
         label.style.textAlign = 'center';
-        label.classList.add('rainbow-animation'); // Add rainbow animation class
 
         this.UIContext.appendChild(label);
 
@@ -547,10 +546,10 @@ class UITab {
         return button;
     }
 
-    addLabel(labelText) {
+    addLabel(labelText, color) {
         const label = document.createElement('h3');
         label.innerHTML = labelText;
-        label.style.color = '#ffffff'; // White text color
+        label.style.color = color; // White text color
         label.style.marginBottom = '20px';
         label.style.fontSize = '18px';
         label.style.textAlign = 'center';
@@ -892,17 +891,16 @@ document.onclick = () => {
     tabs[3].uiTab.addLabel("Email: uwufoonix5@outlook.com");
     tabs[3].uiTab.addLabel("Telegram: @foofoothefox");
 
-    tabs[4].uiTab.addLabel("Liam - Husband");
-    tabs[4].uiTab.addLabel("Hri7566 - Kewl Programmer dude");
-    tabs[4].uiTab.addLabel("Yellow - Programmer Bestie I met from Bullet Force");
-    tabs[4].uiTab.addLabel("Lapis - Cool Furball");
-    tabs[4].uiTab.addLabel("Niva - Cute Arctic Fox Thing");
-    tabs[4].uiTab.addLabel("Ruines - Mischievous Goober Cat Dude");
-    tabs[4].uiTab.addLabel("Nextrix - Cool VFX Dude");
-    tabs[4].uiTab.addLabel("Hackery - Doesn't know if he's a furry or not");
-    tabs[4].uiTab.addLabel("Asuka - Japanese man programmer");
-    tabs[4].uiTab.addLabel("dll.gg - German Dude");
-    tabs[4].uiTab.addLabel("Khorne - Another Pawsome Furball");
+    tabs[4].uiTab.addLabel("Liam - Husband", "#5D3FD3");
+    tabs[4].uiTab.addLabel("Hri7566 - Kewl Programmer dude", "#8d3f50");
+    tabs[4].uiTab.addLabel("Yellow - Programmer Bestie I met from Bullet Force", "#FFFF00");
+    tabs[4].uiTab.addLabel("Lapis - Cool Furball", "#588ff7");
+    tabs[4].uiTab.addLabel("Niva - Cute Arctic Fox Thing", "#d1e1ff");
+    tabs[4].uiTab.addLabel("Ruines - Mischievous Goober Cat Dude", "#9e70c5");
+    tabs[4].uiTab.addLabel("Nextrix - Cool VFX Dude", "#008000");
+    tabs[4].uiTab.addLabel("Hackery - Doesn't know if he's a furry or not", "#ffc8c8");
+    tabs[4].uiTab.addLabel("Asuka - Japanese man programmer", "#ff9797");
+    tabs[4].uiTab.addLabel("Khorne - Another Pawsome Furball", "#b50507");
 
     tabs[5].uiTab.addSpacer(15);
     tabs[5].uiTab.addLabel("BG Music Controls");
