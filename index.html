@@ -160,13 +160,13 @@ class UIManager {
         title.style.fontSize = '22px';
         title.style.textAlign = 'center';
         title.style.marginBottom = '10px';
-        title.classList.add('rainbow-animation'); // Add rainbow animation class
+        title.classList.add('flicker-animation'); // Add rainbow animation class
 
         const description = document.createElement('p');
         description.textContent = descriptionText;
         description.style.fontSize = '16px';
         description.style.textAlign = 'center';
-        description.classList.add('rainbow-animation'); // Add rainbow animation class
+        description.classList.add('flicker-animation'); // Add rainbow animation class
 
         notificationContainer.appendChild(title);
         notificationContainer.appendChild(description);
@@ -241,7 +241,7 @@ class UIManager {
         title.style.fontSize = '22px';
         title.style.textAlign = 'center';
         title.style.marginTop = '0px';
-        title.classList.add('rainbow-animation');
+        title.classList.add('flicker-animation');
 
         container.appendChild(title);
 
@@ -312,7 +312,7 @@ class UIManager {
         button.style.fontWeight = 'bold';
         button.style.fontSize = '16px';
         button.addEventListener('click', buttonAction);
-        button.classList.add('rainbow-animation'); // Add rainbow animation class
+        button.classList.add('flicker-animation'); // Add rainbow animation class
 
         const buttonTextSpan = document.createElement('span');
         buttonTextSpan.textContent = buttonText;
@@ -358,7 +358,7 @@ class UIManager {
         input.style.borderRadius = '5px';
         input.addEventListener('input', valueChangeAction);
         input.style.backgroundColor = '#0e0e0e'; // White text color
-        input.classList.add('rainbow-animation'); // Add rainbow animation class
+        input.classList.add('flicker-animation'); // Add rainbow animation class
         input.focus();
 
         this.UIContext.appendChild(input);
@@ -405,7 +405,7 @@ class UIManager {
         tabContainer.style.display = 'flex';
         tabContainer.style.borderBottom = '1px solid #cc0000'; // Bright red border
         tabContainer.style.marginBottom = '20px';
-        tabContainer.classList.add('rainbow-animation')
+        tabContainer.classList.add('flicker-animation')
 
         const contentContainers = tabs.map(() => document.createElement('div'));
 
@@ -420,7 +420,7 @@ class UIManager {
             tabButton.style.cursor = 'pointer';
             tabButton.style.fontWeight = 'bold';
             tabButton.style.fontSize = '16px';
-            tabButton.classList.add('rainbow-animation'); // Add rainbow animation class
+            tabButton.classList.add('flicker-animation'); // Add rainbow animation class
 
             tabButton.addEventListener('click', () => {
                 contentContainers.forEach((container, idx) => {
@@ -467,7 +467,7 @@ class UIManager {
             tabButton.style.cursor = 'pointer';
             tabButton.style.fontWeight = 'bold';
             tabButton.style.fontSize = '16px';
-            tabButton.classList.add('rainbow-animation'); // Add rainbow animation class
+            tabButton.classList.add('flicker-animation'); // Add rainbow animation class
 
             tabButton.addEventListener('click', () => {
                 contentContainers.forEach((container, idx) => {
@@ -536,7 +536,7 @@ class UITab {
         button.style.fontWeight = 'bold';
         button.style.fontSize = '16px';
         button.addEventListener('click', buttonAction);
-        button.classList.add('rainbow-animation'); // Add rainbow animation class
+        button.classList.add('flicker-animation'); // Add rainbow animation class
 
         const buttonTextSpan = document.createElement('span');
         buttonTextSpan.textContent = buttonText;
@@ -555,7 +555,7 @@ class UITab {
         label.style.marginBottom = '20px';
         label.style.fontSize = '18px';
         label.style.textAlign = 'center';
-        label.classList.add('rainbow-animation'); // Add rainbow animation class
+        label.classList.add('flicker-animation'); // Add rainbow animation class
 
         this.contentContainer.appendChild(label);
 
@@ -572,7 +572,7 @@ class UITab {
         input.style.borderRadius = '5px';
         input.addEventListener('input', valueChangeAction);
         input.style.backgroundColor = '#0e0e0e'; // White text color
-        input.classList.add('rainbow-animation'); // Add rainbow animation class
+        input.classList.add('flicker-animation'); // Add rainbow animation class
         input.focus();
         this.contentContainer.appendChild(input);
         input.focus();
@@ -631,7 +631,7 @@ class UITab {
         slider.addEventListener('mousedown', showBubble);
         slider.addEventListener('touchstart', showBubble);
     
-        slider.classList.add('rainbow-animation');
+        slider.classList.add('flicker-animation');
     
         const bubble = document.createElement('div');
         bubble.style.position = 'absolute';
@@ -737,6 +737,24 @@ animation: rainbow 4s linear infinite;
     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
         animation: rainbow 4s linear infinite;
     }
+
+     @keyframes flicker {
+            0% { color: red; }
+            10% { color: black; }
+            20% { color: red; }
+            30% { color: white; }
+            40% { color: red; }
+            50% { color: black; }
+            60% { color: red; }
+            70% { color: white; }
+            80% { color: red; }
+            90% { color: black; }
+            100% { color: red; }
+        }
+
+        .flicker-animation {
+            animation: flicker 0.5s infinite; /* Adjust timing and animation as needed */
+        }
 `;
     document.head.appendChild(style);
 }
