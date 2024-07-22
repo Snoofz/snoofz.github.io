@@ -771,6 +771,13 @@ let music = {
     get volume() {
         return this.audio.volume;
     }
+    set loop(value) {
+        this.audio.loop = value;
+    }
+
+    get loop() {
+        return this.audio.loop;
+    }
 };
 
 function hideOverlay() {
@@ -904,6 +911,7 @@ document.onclick = () => {
 
     tabs[5].uiTab.addSpacer(15);
     tabs[5].uiTab.addLabel("BG Music Controls", "#5D3FD3");
+    music.loop = true;
     tabs[5].uiTab.addButton("Pause", () => {
         if (music.isPlaying) {
             music.pause();
