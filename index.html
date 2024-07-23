@@ -120,11 +120,25 @@ footer {
 footer p {
     font-size: 0.9em;
 }
-
+#bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
     </style>
 </head>
-<body id="uwubg">
-    <div class="overlay" id="overlay" onclick="hideOverlay()"><span class="fade-effect">Click to continue</span></div>
+ <body id="uwubg">
+        <video id="bg-video" autoplay loop>
+        <source src="https://cdn.discordapp.com/attachments/1249940319378735207/1265087746297434172/Memory_Merge_1.mp4?ex=66a03c46&is=669eeac6&hm=1207ac6c38960b95641f7aeed2a0ca697f27b1a8365817baa65858a23a7b721b&" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="overlay" id="overlay" onclick="hideOverlay()">
+        <span class="fade-effect">Click to continue</span>
+    </div>
   <script>
 class UIManager {
     constructor() {
@@ -764,43 +778,54 @@ function newTab(url) {
 }
 
 let music = {
-    audio: new Audio("https://github.com/Snoofz/snoofz.github.io/raw/main/ThxSoMch%20-%20Hate..mp3"),
+    video: document.getElementById('bg-video'),
     isPlaying: false,
     play: function() {
-        this.audio.play();
+        this.video.play();
         this.isPlaying = true;
     },
     pause: function() {
-        this.audio.pause();
+        this.video.pause();
         this.isPlaying = false;
     },
     resume: function() {
-        this.audio.play();
+        this.video.play();
         this.isPlaying = true;
     },
     stop: function() {
-        this.audio.pause();
-        this.audio.currentTime = 0;
+        this.video.pause();
+        this.video.currentTime = 0;
         this.isPlaying = false;
     },
     set volume(value) {
-        this.audio.volume = value;
+        this.video.volume = value;
     },
     get volume() {
-        return this.audio.volume;
+        return this.video.volume;
     },
     set loop(value) {
-        this.audio.loop = value;
+        this.video.loop = value;
     },
     get loop() {
-        return this.audio.loop;
+        return this.video.loop;
     }
 };
 
+function playVideo() {
+    const video = document.getElementById('bg-video');
+    const overlay = document.getElementById('overlay');
+    video.play();
+    video.muted = false;
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+      
 function hideOverlay() {
     document.getElementById('overlay').style.display = 'none';
+    document.body.style.overflow = 'auto';
+    playVideo();
 }
-
+      
 let uiManager = new UIManager();
 
 let messages = [
@@ -812,6 +837,12 @@ let messages = [
     "Want to end up on the Homies Tab? Get to know me and ill consider it!"
 ];
 
+window.onload = function() {
+    const video = document.getElementById('bg-video');
+    video.muted = true;
+    video.play();
+    video.pause();
+};
 let hasContinued = false;
 
 document.onclick = () => {
